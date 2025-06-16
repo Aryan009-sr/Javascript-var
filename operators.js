@@ -77,3 +77,23 @@ console.log(5 !== "5");//true
 console.log(0 !== false); // true
 
 
+
+// Logical operatos and ternary operators
+
+//"&&" operator: check outs to true if both the conditions are true
+log1 = 50;
+log2 = 52;
+console.log(log1 >= 60 && log2 <= 50);
+
+//"||" operator
+console.log(log1 <= 60 || log2 <=50);
+
+//"!"operator
+console.log(!(log1 != log2));
+
+//"ternary operator"
+let age = 35;
+age < 18 ? console.log("you can't drive") : console.log("You can drive");
+
+let number = 45;
+number % 2 == 0 ? console.log("number is even"): console.log("number is odd")
