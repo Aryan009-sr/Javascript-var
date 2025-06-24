@@ -2,6 +2,8 @@
 // console.log(arr.push(23,43,5));
 // console.log(arr);
 
+const { jsx, jsxs } = require("react/jsx-runtime");
+
 // console.log(arr.pop());
 // console.log(arr);
 // console.log(arr.unshift(90, 554,34));
@@ -175,3 +177,140 @@
 //     return `${index + 1}. ${item}`;
 // })
 // console.log("Formatted items: ", formattedItems);
+
+// Revision of splice method
+// const arr = [1,2,3,4,5];
+// arr.splice(0, 3);
+// console.log(arr);// output should be [4,5];
+
+// arr.splice(0,4,10,11,12,13, 14);
+// console.log(arr)//output: 5 and other added elements
+
+// tospliced
+// const months = ["jan", "march", "April", "May"];
+// // inserting an element at index 1;
+// const months2 = months.toSpliced(1, 0, 'feb');
+// console.log(months2);
+// // Deleting two element starting from index 2
+// const months3 = months2.toSpliced(2,2);
+// console.log(months3);
+// // Replacing one element at index 1 one with two elements
+// const months4 = months3.toSpliced(1,1,'feb', 'mar');
+// console.log(months4);
+// // Original array is not modified
+// console.log(months)
+
+
+// Write a JavaScript function processArray(arr) that takes an array of numbers as input and performs the following tasks:
+
+// Use sort() to sort the array in ascending order.
+// Use reverse() to reverse the sorted array.
+// Use Math.max() to find the maximum value in the array.
+// Use Math.min() to find the minimum value in the array.
+// Use the concept of creating a sorted copy of the array (tosorted()).
+
+
+// function processArray(arr) {
+//     console.log("Original array:", arr);
+
+//     arr.sort((a, b) => a - b);
+//     console.log("Sorted array in ascending order:", arr);
+
+//     const reversedArray = [...arr].reverse();
+//     console.log("Reversed sorted array:", reversedArray);
+
+//     const maxValue = Math.max(...arr);
+//     console.log("Maximum value in the array:", maxValue);
+
+//     const minValue = Math.min(...arr);
+//     console.log("Minimum value in the array:", minValue);
+
+//     const sortedCopy = [...arr];
+//     console.log("Sorted copy of the original array:", sortedCopy);
+
+//     return {
+//         originalArray: arr,
+//         sortedArray: arr,
+//         reversedArray: reversedArray,
+//         maxValue: maxValue,
+//         minValue: minValue,
+//         sortedCopy: sortedCopy
+//     };
+// }
+
+// const arr = [3, 1, 4, 1, 5, 9, 2, 6, 5];
+// console.log(processArray(arr));
+
+
+// const obj = {
+//     a: 1,
+//     b: 2, 
+//     c: 3
+// };
+// let sum = 0;
+// for (let key in obj) {
+//     sum += obj[key];// sum = sum + ojb[key]-> 1 + 2-> 3 + 3 -> 6
+// }
+// console.log(sum);
+
+// const arr = [1,2,3,4,5];
+// let sum = 0;
+// for (let i = 0; i< arr.length;i++) {
+//     sum += arr[i];
+// }
+// console.log(sum);
+
+// const fruits = ['apple', 'banana', 'cherry'];
+
+
+// let result = '';
+// for (let fruit of fruits) {
+//     result = result + fruit + ',';
+// }
+// console.log(result);
+
+// Few examples of for... of method
+//BAsic iteration over array elments 
+// const fruits = [ 'apple', 'banana', 'guava', 'kiwi'];
+// console.log("Using for...of with fruits");
+// for (const fruit of fruits ) {
+//     console.log(fruit);
+// };
+
+//Iterating over an array of numbers and performing an operation
+
+// const prices = [11.50, 45.05, 56.94];
+// let total = 0;
+
+// console.log("\n---Using for... of loop to iterate over the array to find sum of all given prices that is total price------->")
+// for (const price of prices ) {
+//     total += price;// total = total + price with each iteration
+//     console.log(`Current price: ${price}, Running total: ${total}`);
+// }
+// console.log(`Final total output is : ${total.toFixed(2)}`);
+
+// Getting both index and values using for...of method
+// const colors = ['red', 'blue', 'green'];
+// console.log("Using for...of loop ");
+// for (const [index,color] of colors.entries()) {
+//     console.log(`Colors at index ${index}: ${color}`)
+// }
+
+
+// const fruits = ['apple', 'banana', 'grapes', 'kiwi'];
+// console.log("Again using for...of method to access index with values.")
+
+// for (const [index, fruit] of fruits.entries()) {
+//     console.log(`Fruits at index ${index}: ${fruit}`);
+// }
+// console.log(typeof(fruits));
+// console.log(fruits.length);
+// fruits.push("PineApple");
+// console.log(fruits);
+// // fruits.splice(0, 3);
+// // console.log(fruits);
+// fruits.forEach((index, value) => {
+//     console.log(`${index}: ${value}`);
+// })
+
+// FOR IN LOOP IS RECOMMENDED WHERER WE HAVE TO ITERATE THROUGHT AN OBJECT AND AVOIDED FOR USING ON ARRAYS
