@@ -6,6 +6,8 @@
 // Classes can also inherit from other classes.
 // Classes can have constructors to intialize properties.
 
+const create = require("prompt-sync");
+
 // class car {
 //     constructor(name, model, year) {
 //         this.name = name;
@@ -172,3 +174,201 @@
 
 // const magazine1 = new Magazine("Tech Today", "John Doe", 2023, "January", 5);
 // console.log(magazine1.getSummary());
+
+// CALL, APPLY AND BIND METHODS
+// The call, apply and bind methods are used to change the context of 'this' in a function.
+// The call method calls a function with a given 'this' value and arguments provided individually.
+// The apply method calls a function with a given 'this' value and arguments provided as an array.
+// The bind method returns a new function with a given 'this' value and arguments provided individually.
+
+// function greet(greeting, punctuation) {
+//     console.log(`${greeting}, ${this.name}${punctuation}`);
+// }
+// const person = {
+//     name: "Prakhar Ajay Singh"
+// };
+// greet.call(person, "Hello", "!");
+// greet.apply(person, ["Hi", "."]);
+// const greetBound = greet.bind(person, "Hey", "?");
+// greetBound();
+
+// The call, apply and bind methods are useful for borrowing methods from other objects or for creating functions with a specific context.
+
+// function createGreeting(firstName, LastName) {
+//     const person = {
+//         firstName: firstName,
+//         LastName: LastName,
+//     };
+//     //Define greet function within createGreeting
+//     function greet() {
+//         console.log(`Hello, ${this.firstName} ${this.LastName}!`);
+//     }
+//     function callGreet() {
+//         greet.call(person);
+//     }
+//     function applyGreet() {
+//         greet.apply(person);
+//     }
+//     const boundGreet = greet.bind(person);
+//     callGreet();
+//     applyGreet();
+//     boundGreet();
+// };
+// createGreeting("Prakhar", "Ajay Singh");
+
+//Use of 'this' in arrow functions
+// Arrow functions do not have their own 'this' context. They inherit 'this' from the parent scope.
+// This means that 'this' in an arrow function refers to the 'this' value of the enclosing context.
+
+// const obj = {
+//     name: "Prakhar Ajay Singh",
+//     greet: function() {
+//         // Regular function
+//         console.log(`Hello, ${this.name}!`);
+//         const arrowGreet = () => {
+//             // Arrow function
+//             console.log(`Hello from arrow function, ${this.name}!`);
+//         }
+//         arrowGreet();
+//     }
+// }
+// // arrowGreet();
+// obj.greet();
+
+// Few more examples of 'this' in different contexts
+// function showThis() {
+//     console.log(this);
+// }
+// const obj1 = {
+//     name: "Prakhar",
+//     show: showThis
+// }
+// const obj2 = {
+//     name: "Ajay",
+//     show: showThis
+// }
+// // showThis();
+// obj1.show(); // 'this' refers to obj1
+// obj2.show(); // 'this' refers to obj2
+// In a regular function, 'this' refers to the global object (window in browsers).
+// In a method, 'this' refers to the object that called the method.
+// In an arrow function, 'this' refers to the enclosing context, not the object that called the function.
+
+// Write a JavaScript function createCounter that:
+
+// Initializes a property count to 0 within an object counterObj.
+// Defines a function increment within createCounter that:
+// Increments this.count by 1.
+// Logs the current value of this.count.
+// Returns the increment arrow function.
+
+// function createCounter() {
+//     const counterObj = {
+//         count: 0,
+//         increment: function() {
+//             this.count += 1; // Increment the count property
+//             console.log(`Current count: ${this.count}`); // Log the current count
+//             return () => {
+//                 this.count += 1; // Increment the count property again
+//                 console.log(`Current count after arrow function: ${this.count}`); // Log the current count again
+//             }
+//         }
+
+//     }
+//     return counterObj.increment.bind(counterObj);
+// }
+
+// const counter = createCounter();
+// counter();
+// const increment = counter();
+// increment();
+
+
+// const obj = {
+//     num: 10,
+//     getNum: function() {
+//         return this.num;
+//     },
+// };
+// const obj2 = {num : 20};
+// const result = obj.getNum.bind(obj2)();
+// console.log(result); // 20
+
+// const greet = function () {
+//     console.log(`Hello, ${this.name}!`);
+// };
+// const person = {
+//     name: "Prakhar Ajay singh"
+// };
+// const greetPrakhar = greet.bind(person);
+// greetPrakhar();
+
+// const obj = {
+//     name: "john",
+//     sayHello: () => {
+//         console.log(`Hello, ${this.name}!`);
+//     },
+// };
+// obj.sayHello();// This will log "Hello, undefined!" because arrow functions do not have their own 'this' context.
+// // To fix this, we can use a regular function instead of an arrow function.
+// const obj2 = {
+//     name: "john",
+//     sayHello: function() {
+//         console.log(`Hello, ${this.name}!`);
+//     },
+// };
+// obj2.sayHello();// This will log "Hello, john!" done.
+
+// "use strict";
+// function logThis() {
+//     console.log(this);
+// };
+// function myFunction() {
+//     logThis();
+// }
+// const someobj = new myFunction();
+// // In strict mode, 'this' will be undefined in a regular function.
+// // In non-strict mode, 'this' will refer to the global object (window in browsers).
+
+// const person = {
+//     name: "Prakhar Ajay Singh",
+//     age: 25,
+//     greet: function() {
+//         console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+//     }
+// };
+
+// const student = Object.create(person);
+// student.name = "Ajay Singh";
+// student.age = 20;
+// student.greet();
+// student.__proto__.greet(); // This will call the greet method from the person object
+
+//Prototype in javascript
+// Every javascript object has a prototype.
+// The prototype is an object that is associated with every function and object.
+// The prototype is used to add properties and methods to an object.
+// The prototype is used to implement inheritance in javscript.
+// The prototype is used to share properties and metthods between objects.
+// The prototype is used to implement polymorphism in javascript.
+// The prototype is used to implement encapsulation in javasccript.
+// The prototype is used to implememt abstraction in javascript.
+//few examples of prototype in javascript
+
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+// };
+// Person.prototype.greet = function() {
+//     console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+// }
+// const person1 = new Person("Naina singh", 25);
+// const person2 = new Person("Bhavesh Singh", 30);
+// const person3 = new Person("Bhaukal singh", 45);
+// const person4 = new Person("Adrak singh", 50);
+// person1.greet();
+// person2.greet();
+// person3.greet();
+// person4.greet();
+
+// In the above example, we created a constructor function Person that takes name and age as parameters. We then added a method greet to the prototype of the Person function. This allows us to create multiple instances of Person and share the greet method betweent them. When we call the greet method on person1 and person2, it logs the name and age of each person.
