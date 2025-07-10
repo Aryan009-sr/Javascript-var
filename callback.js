@@ -172,6 +172,57 @@
 //         console.log(error);
 //     });
 
+// Practice problem
+/**
+//  * Simulates a network request and returns a Promise.
+//  * The Promise resolves with a success message or rejects with an error message
+//  * after a 2-second delay, based on a simulated success/failure condition.
+//  *
+//  * @param {boolean} shouldSucceed - A flag to determine if the simulated request should succeed or fail.
+//  * @returns {Promise<string>} A Promise that resolves with a success message or rejects with an error message.
+//  */
+// function fetchData(shouldSucceed) {
+//     return new Promise((resolve, reject) => {
+//         console.log("Attempting to fetch data...");
+//         setTimeout(() => {
+//             if (shouldSucceed) {
+//                 resolve("Data fetched successfully!");
+//             } else {
+//                 reject("Error fetching data!");
+//             }
+//         }, 2000); // 2-second delay
+//     });
+// }
+
+// /**
+//  * Calls the fetchData function and handles its Promise resolution and rejection.
+//  * It logs success messages to the console and error messages to the console.
+//  *
+//  * @param {boolean} simulateSuccess - A flag to pass to fetchData, determining if the simulated fetch should succeed.
+//  */
+// function processData(simulateSuccess) {
+//     console.log(`\n--- Initiating data processing (Simulating success: ${simulateSuccess}) ---`);
+//     fetchData(simulateSuccess)
+//         .then(message => {
+//             console.log("Success:", message); // Log the success message
+//         })
+//         .catch(error => {
+//             console.error("Error:", error); // Log the error message
+//         });
+// }
+
+// // --- Demonstrate the usage ---
+
+// // Scenario 1: Simulate a successful data fetch
+// processData(true);
+
+// // Scenario 2: Simulate a failed data fetch
+// // To ensure the messages don't interleave confusingly in the console,
+// // we can add a slight delay for the second scenario, though not strictly necessary for Promise behavior.
+// setTimeout(() => {
+//     processData(false);
+// }, 2500); // Start the second scenario slightly after the first one's timeout.
+
 //--------------------------------
 //Fetch method
 
@@ -204,3 +255,89 @@
 //     }
 // }
 // getPosts();
+
+
+//practice 1: promise.all
+// function fetchData1() {
+//     // Return a Promise that resolves after 1 second
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Data from fetchData1");
+//         }, 1000);
+//     });
+// }
+
+// function fetchData2() {
+//     // Return a Promise that resolves after 2 seconds
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Data from fetchData2");
+//         }, 2000);
+//     });
+// }
+
+// function fetchData3() {
+//     // Return a Promise that resolves after 3 seconds
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Data from fetchData3");
+//         }, 3000);
+//     });
+// }
+
+// function fetchAllData() {
+//     // Use Promise.all() to execute all fetchData functions concurrently
+//     Promise.all([fetchData1(), fetchData2(), fetchData3()])
+//         .then((results) => {
+//             // Handle the resolved results
+//             console.log(results);
+//         })
+//         .catch((error) => {
+//             // Handle any rejected Promise
+//             console.log(error);
+//         });
+// }
+// fetchAllData();
+
+// //Practice 2: promise.any
+// function fetchData1() {
+//     // Return a Promise that rejects after 1 second
+//     return new Promise((_, reject) => {
+//         setTimeout(() => {
+//             reject("Error from fetchData1");
+//         }, 1000);
+//     });
+// }
+
+// function fetchData2() {
+//     // Return a Promise that resolves after 2 seconds
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Data from fetchData2");
+//         }, 2000);
+//     });
+// }
+
+// function fetchData3() {
+//     // Return a Promise that resolves after 3 seconds
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Data from fetchData3");
+//         }, 3000);
+//     });
+// }
+
+// function fetchAnyData() {
+//     // Use Promise.any() to execute all fetchData functions concurrently
+//     Promise.any([fetchData1(), fetchData2(), fetchData3()])
+//         .then((result) => {
+//             // Handle the resolved result
+//             console.log(result);
+//         })
+//         .catch((error) => {
+//             // Handle any rejected Promise
+//             console.log(error);
+//         });
+// }
+
+// fetchAnyData();
