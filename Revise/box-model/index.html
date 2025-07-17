@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Box model in CSS</title>
+    <style>
+        *{
+            text-align: center;
+        }
+
+        .container {
+            background-color:#eee;
+            padding:30px;
+            width:300px;
+            height:150px;
+            margin:50px auto;
+            border:2px dashed gray;
+            position:relative;
+        }
+
+        .absolute-box{
+            background-color: #ff9999;
+            padding:15px;
+            border:2px solid red;
+            position:absolute;
+            top:20px;
+            left:20px
+        }
+
+        .sibling-box{
+            background-color: tan;
+            padding:10px;
+            margin-top: 10px;
+        }
+        .relative-box{
+            background-color: lightgreen;
+            margin:10px;
+            padding: 20px;
+            position:relative;
+            top:20px;
+            left:30px;
+            border:2px solid green;
+        }
+        .box1
+        .static-box {
+            background-color: lightblue;
+            padding:20px;
+            margin:10px;
+            position: static;
+        }
+
+        .box{
+            background-color: red;
+            padding:20px;
+            margin:10px;
+        }
+
+        /* *{
+            background-color: black;
+        }
+        .box1{
+            border:2px solid black;
+            background-color: navy;
+            color:white;
+            border-radius: 8px;
+            text-align: center;
+            padding:20px 15px;
+            margin: 10px;
+        }
+        .box2{
+            border:2px solid black;
+            border:2px solid black;
+            padding:20px 15px;
+            margin: 10px;
+            background-color: rgb(20, 72, 92);
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        button{
+            border: 3px solid rgb(56, 59, 56);
+            background-color: black;
+            color:rgb(206, 222, 222);
+            padding:8px;
+            margin: 8px;
+            cursor:pointer;
+            border-radius: 8px;
+            box-shadow: 10px 2px 40px red;
+        }
+
+        button:hover {
+            background-color: lightslategray;
+        }
+
+        button:active{
+            background-color: purple;
+        } */
+        /* h1 {
+            border:2px solid black;
+            color:blue;
+            background-color:skyblue;
+            border-radius:8px;
+        } */
+    </style>
+</head>
+<body>
+
+    <div class="static-box">
+        This is a static box. It follows the normal document flow.
+    </div>
+    <div style="background-color: lightcoral; padding: 20px; margin:10px; text-align: center;">
+        Another box after the static one.
+    </div>
+
+    <div class="box">box 1</div>
+    <div class="relative-box">
+        This is a relative box. It's offset from its original position, but its original space would still be reserved.
+    </div>
+    <div class="box">Stays in the same position it is placed initially</div>
+
+    <div class="container">
+        Container (position: relative)
+        <div class="absolute-box">
+            absolute box (top:20px left:20px)
+        </div>
+        <div class="sibling-box">
+            sibling box. absolute box doesn't affect its flow.
+        </div>
+    </div>
+
+<!-- 
+    <div class="box1">Learning css box model</div>
+    <div class="box2">Learning css box model</div>
+    <button type="submit" name="button" value="name">Submit</button> -->
+
+    <!-- <h1>Box Model in CSS</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe ut temporibus quos.</p> -->
+</body>
+</html>

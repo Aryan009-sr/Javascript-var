@@ -3,7 +3,55 @@
 // // // Call back function ==== function which is passed as the argument to the other function is called as call back function
 
 // // //Example
-// // //Takes one or more functions as arguments: These functions are often referred to as callback functions. The higher-order function uses these callbacks to perform operations or customize its behavior.
+// // //Takes one or more functions as arguments: These functions are often referred to as callback functions. The higher-order function uses these callbacks to perform operations or customize its behavior
+// 
+
+// function greet() {
+//     console.log('Hello there!!');
+// }
+// function wish(action) {
+//     action();
+// }
+// wish(greet);
+
+//Popular javascript higher order function 
+//1.Map
+const numbers = [1,2,3,5,6];
+const doubled = numbers.map((number) => number * 2);
+console.log(doubled);
+const tripled = numbers.map((number) => number * 3);
+console.log(tripled);
+const squared = numbers.map((number) => number * number);
+console.log(squared);
+
+//2.FIlter
+// Filter function is used to create a new array containing elements that satisfy a condition
+const fruits = ['apple', 'banana', 'grapes', 'watermelon', 'pineapple', 'raspberry'];
+const newFruits = fruits.filter((fruit)=> fruit.length >= 7);
+console.log(newFruits);
+const addFruits = fruits.filter((fruit) => fruit.search('banana'));
+console.log(addFruits);
+
+//3.Reduce
+// The reduce function accumulates array elements into a single element based on a callback function 
+const digits = [1,2,3,4,5];
+// const sum = digits.reduce((acc, curr) => acc + curr, 0);
+// console.log(sum);
+const sum = digits.reduce((accumulator, currentValue) => {
+    console.log(`Accumulator: ${accumulator}, Current Value: ${currentValue}`);
+    return accumulator + currentValue;
+}, 0);
+console.log("Total sum: ",sum);
+
+//Example 2; of reduce
+const numbs  = [10,3,45,53,3,43,22];
+const max = numbs.reduce((accumulator, currentValue) => {
+    console.log(`Accumulator {max so far: ${accumulator}, CurrentValue: ${currentValue}}`);
+    return Math.max(accumulator, currentValue);
+}, -Infinity);
+console.log("The Maximum value is : ", max);
+
+
 
 
 // // // function operateOnNums (arr, operation) {
@@ -178,3 +226,34 @@
 // setTimeout(() => {
 //    console.log('Post the image on insta'); 
 // }, 9000);
+
+
+// //more practice
+// const fruits = ['apple', 'banana', 'chiku'];
+// function logFruits(fruit) {
+//     console.log(`I love having ${fruit}`);
+// }
+// fruits.forEach(logFruits);
+
+
+// 2 - A custom executeTwice HOF
+// function greet() {
+//     console.log('Hello everyone!!');
+// }
+// function printTwice(func) {
+//     func();
+//     func();
+// }
+// printTwice(greet);
+
+// HOF'S that return function
+// A simple create multiplier function
+// function createMultiplier(factor) {
+//     return function(number){
+//         return number * factor;
+//     }
+// }
+// const double = createMultiplier(2);
+// const triple = createMultiplier(3);
+// console.log(double(5));
+// console.log(triple(6));  
