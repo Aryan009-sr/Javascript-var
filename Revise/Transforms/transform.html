@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        div{
+            display: flex;
+        }
+        .transform{
+            width:100px;
+            height:100px;
+            background-color: aqua;
+            justify-content:center;
+            align-items: center;
+        
+            /* transform: translate(50px, 100px); */
+            /* transform: rotate(45deg); */
+            /* transform: scale(2,3); */
+            /* transform:skewX(10deg);
+            transform:skewY(15deg); */
+            /* The matrix function combines all the 2d transfrom functions into one */
+            transform: matrix(2,2,2,3,0, 0);
+
+        }
+    </style>
+</head>
+<body>
+    <!-- CSS 2-d transform -->
+     <div class="transform">
+        box1
+     </div>
+</body>
+</html>
