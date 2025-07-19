@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understandin Flexbox</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            margin:0;
+        }
+        header{
+            background:purple;
+            height:100px;
+        }
+        h1{
+            text-align: center;
+            color:white;
+            line-height: 100px;
+            margin:0;
+        }
+        section{
+            zoom: 0.8;
+            display:flex;
+            /* flex-flow:column-reverse wrap; */
+            
+        }
+        article{
+            flex:1;
+            padding:10px;
+            margin:10px;
+            background: aqua;
+            border:1px solid skyblue;
+        }
+        article:nth-of-type(5) {
+            flex: 2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Understanding Flexbox</h1>
+    </header>
+    <section>
+        <article>
+            <h2>First Article</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis alias numquam amet consequatur asperiores! Obcaecati distinctio explicabo et minima corporis, aliquid, architecto nulla sunt ipsum quas aperiam provident ducimus. Laboriosam!</p>
+        </article>
+        <article>
+            <h2>Second Article</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officiis tenetur et dicta sequi magnam placeat consectetur expedita voluptatum necessitatibus, minima eum facere rem maxime natus at distinctio dolore repellendus.</p>
+        </article>
+        <article>
+            <h2>Third Article</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed aperiam laboriosam quaerat fugiat. Eveniet expedita laudantium sequi voluptates, doloribus assumenda accusantium ullam obcaecati nostrum natus sunt esse optio temporibus voluptatum.</p>
+        </article>
+        <article>
+            <h2>Fourth Article</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed aperiam laboriosam quaerat fugiat. Eveniet expedita laudantium sequi voluptates, doloribus assumenda accusantium ullam obcaecati nostrum natus sunt esse optio temporibus voluptatum.</p>
+        </article>
+        <article>
+            <h2>Fifth Article</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed aperiam laboriosam quaerat fugiat. Eveniet expedita laudantium sequi voluptates, doloribus assumenda accusantium ullam obcaecati nostrum natus sunt esse optio temporibus voluptatum.</p>
+        </article>
+        <article>
+            <h2>Sixth Article</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed aperiam laboriosam quaerat fugiat. Eveniet expedita laudantium sequi voluptates, doloribus assumenda accusantium ullam obcaecati nostrum natus sunt esse optio temporibus voluptatum.</p>
+        </article>
+    </section>
+</body>
+</html>
