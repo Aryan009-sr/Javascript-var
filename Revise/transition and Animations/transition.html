@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnderStanding transitions</title>
+    <style>
+        div{display:flex}
+        .container{
+            width:100px; 
+            height:100px; 
+            background:red;
+            transition-property: width;
+            transition-duration: 2s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 2s;
+        }
+
+        .container:hover {
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Transition
+     transition-delay
+     transition-duration
+     transition-property
+     transition-timing-function -->
+
+     <div class="container">
+        div1
+     </div>
+</body>
+</html>
